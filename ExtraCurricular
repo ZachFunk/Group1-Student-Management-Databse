@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class ExtraCurricular {
+    private String[] activities = {
+      "Soccer", "Basketball", "Volleyball", "Newspaper", "Art", "Gaming", "Movies"
+    };
+    private ArrayList<String> selectedAct = new ArrayList<>();
+    private Scanner stdin = new Scanner(System.in);
+
+    private Student student;
+
+    public void setActivities() {
+        System.out.println("List of Available Activities: ");
+        for(String activity : activities) {
+            System.out.println(activity);
+        }
+
+        System.out.println();
+
+        System.out.println("Enter the activities you would like to join (Enter nothing to exit): ");
+        while(true) {
+            System.out.print("activity: ");
+            String select = stdin.nextLine();
+            if(select.equals("")) break;
+            selectedAct.add(select);
+        }
+    }
+
+    public ArrayList<String> getActivities() {
+        return selectedAct;
+    }
+}
