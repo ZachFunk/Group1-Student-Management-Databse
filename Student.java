@@ -1,5 +1,6 @@
 import java.util.*;
 public class Student{
+    Scanner stdin = new Scanner(System.in);
 
     // Instance variables go here: students ID number, Name, Address, Phone number, email
 
@@ -13,20 +14,20 @@ public class Student{
     private ArrayList<String> extra = new ArrayList<>();
 
     private String name;
-    Scanner stdin = new Scanner(System.in);
+    
     private String course;
 
     ///////////////////////////////////////////////////////////////////////////////////////////////
     // Constructor
     public Student(){
-        Scanner stdin =new Scanner(System.in);
+        Scanner stdin = new Scanner(System.in);
         System.out.println ("Enter student ID:");
         studentID = stdin.nextLong();
         
 
         System.out.println ("Enter student first name + last name:  ");
         name = stdin.nextLine();
-        stdin.nextline();
+        stdin.nextLine();
         
         System.out.println ("Enter student's year of study:");
         year = stdin.nextInt();
@@ -74,12 +75,12 @@ public class Student{
         return email;
     }
 
-    public void getClasses(){
-       System.out.println(classes);
-        }
+    public ArrayList<String> getClasses(){
+       return classes;
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void setClasses(){
+        
         System.out.println("How many courses do you wnt to take");
         int take = stdin.nextInt();
         int count = 0;
@@ -118,48 +119,27 @@ public class Student{
         }
     }
 
-    public void addCourse(){
-        
-        System.out.println("Would you like to add a course? y/n");
-            String ans = stdin.next();
-                while (ans.equals("y")){
-                    System.out.println ("Enter the class you want to add!");
-                    classes.add(stdin.next());
-                    System.out.println("Would you still like to add a course? y/n");
-                    ans = stdin.next();
-            }
-        
-    }
-    public void removeCourse(){
-        System.out.println("would you like to remove a course? y/n");
-        ans = stdin.next();
-        
-        if (ans.equals("y")  && classes.size() != 0  ){
-
-           while (ans.equals("y")){
-            System.out.println("Current courses: " + classes + "\n Pick a course you would ike to remove (Starting at index 0)");
-            classes.remove(std.nextInt());
-            System.out.println("would you like to remove another class?");
-            ans = stdin.nextLine();
-           }
-        
-        else{break;}   
-
-        }
-        else{System.out.println("You have no courses to remove!"); break;}
-    }
+   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-public 
-/////////////////////////////////////////////////////////////////////////////////////////////////
+
+
     // Main function
     public static void main(String[] args){
+        Scanner stdin = new Scanner(System.in);
 
-        // input
-        Scanner in = new Scanner(System.in);
+       
+        
 
         // Create an instance of the student class
         Student student1 = new Student();
+
+        addRemove addRemoveOb = new addRemove();
+        addRemoveOb.addCourse();
+
+        ExtraCurricular extraOB = new ExtraCurricular();
+        extraOB.setActivities();
     }
+
 }
 
 
