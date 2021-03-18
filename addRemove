@@ -1,0 +1,43 @@
+mport java.util.Scanner;
+
+
+
+public class addRemove {
+    private Scanner stdin = new Scanner(System.in);
+    private Student student;
+
+    
+
+    public void addCourse(){
+        
+        System.out.println("Would you like to add a course? y/n");
+            String ans = stdin.next();
+                while (ans.equals("y")){
+                    System.out.println ("Enter the class you want to add!");
+                    classes.add(stdin.next());
+                    System.out.println("Would you still like to add a course? y/n");
+                    ans = stdin.next();
+            }
+        
+    }
+    public void removeCourse(){
+        System.out.println("would you like to remove a course? y/n");
+        String ans = stdin.next();
+        
+        if (ans.equals("y")  && classes.size() != 0  ){
+
+           while (ans.equals("y")){
+            System.out.println("Current courses: " + s.getClasses() + "\n Pick a course you would ike to remove (Starting at index 0)");
+            classes.remove(std.nextInt());
+            System.out.println("would you like to remove another class?");
+            ans = stdin.nextLine();
+           }
+        
+          
+
+        }
+        else{System.out.println("You have no courses to remove!"); break;}
+    }
+    
+    
+}
